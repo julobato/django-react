@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="By Julianne Lobato">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Title</title>
+
+        <meta name="msapplication-TileColor" content="#ec6b43">
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#ec6b43">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#ec6b43">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ec6b43">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    </head>
+
+    <body>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+
+    {% block javascript %}{% endblock %}
+</html>
+
