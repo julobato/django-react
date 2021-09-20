@@ -39,7 +39,7 @@ module.exports = {
 
 			if (extension === 'jsx') {
 				// eslint-disable-next-line
-				var output_extension = 'js'
+				var output_extension = 'jsx'
 			}
 			if (extension === 'css') {
 				// eslint-disable-next-line

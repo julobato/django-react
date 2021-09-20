@@ -1,0 +1,54 @@
+body{
+    font-family: Montserrat;
+    margin: 0;
+}
+
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../static/");
+    background-size: cover;
+}
+
+.home-header{
+    width: 100%;
+    position: fixed;
+    padding: 30px 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.home-header-links{
+    display: flex;
+}
+
+.home-header-links-item{
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    margin: 0 50px;
+}
+
+.home-header-links-item:hover{
+    cursor: pointer;
+    color: rgb(238, 201, 80);
+}
+
+.home-header-links-item:first-of-type{
+    margin-left: 0;
+}
+
+.home-header-links-item:last-of-type{
+    margin-right: 0;
+}
+
+.home-header-logo{
+    width: max-content;
+    padding: 15px;
+    border: 2px solid rgb(238, 201, 80);
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(238, 201, 80);
+}

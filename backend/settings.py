@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'freedbtech_lobatodev',
-        'USER': 'freedbtech_lobato',
-        'PASSWORD': '123@lobato',
-        'HOST': 'freedb.tech',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'd5kvahsckfaec9',
+        'USER': 'pjqxbmjgpcjurx',
+        'PASSWORD': '633eaf337d4f52fcf862e1f1a41f9ef920aa9634d71ce66dfae8a12e54980e0d',
+        'HOST': 'ec2-18-214-140-149.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -105,16 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'bundles')
-]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -152,6 +142,15 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'bundles'),
+    os.path.join(BASE_DIR, 'todo/assets'),
+    os.path.join(BASE_DIR, 'todo/styles'),
+]

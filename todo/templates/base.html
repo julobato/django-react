@@ -6,7 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="By Julianne Lobato">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <title>Title</title>
+        <title>Welcome to my website | Julianne Lobato</title>
+
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/icon.png">
 
         <meta name="msapplication-TileColor" content="#ec6b43">
         <!-- Chrome, Firefox OS and Opera -->
@@ -17,18 +20,145 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="#ec6b43">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+        <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     </head>
 
+    {% block style %}{% endblock %}
+
+    <style>
+        body{
+            font-family: Montserrat;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            margin: 0;
+        }
+
+        /* Works on Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgb(175, 175, 175) rgb(230, 230, 230);
+        }
+
+        /* Works on Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 13px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgb(230, 230, 230);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: rgb(175, 175, 175);
+            border-radius: 20px;
+            border: 3px solid transparent
+        }
+
+        :root{
+            --red: rgb(255,45,0);
+        }
+
+        .header{
+            width: 100%;
+            position: fixed;
+            padding: 15px 15vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .header-links{
+            display: flex;
+        }
+
+        .header-links-item{
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            margin: 0 30px;
+        }
+
+        .header-links-item:hover{
+            cursor: pointer;
+            color: var(--red);
+        }
+
+        .header-links-item:first-of-type{
+            margin-left: 0;
+        }
+
+        .header-links-item:last-of-type{
+            margin-right: 0;
+        }
+
+        .header-logo{
+            width: max-content;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+        .header-logo-icon{
+            width: 40px;
+        }
+
+        .header-logo-text{
+            font-size: 40px;
+            margin-right: 10px;
+        }
+
+        .header.is-fixed{
+            background-color: white;
+        }
+
+        .header.is-fixed .header-logo-text,
+        .header.is-fixed .header-links-item{
+            color: black;
+        }
+    </style>
+
     <body>
+        <div class="header" id="header">
+            <a href="/" class="header-logo">
+                <div class="header-logo-text">JLO</div>
+                <img class="header-logo-icon" src="../../static/icon.png"/>
+            </a>
+            <div class="header-links">
+                <a href="/" class="header-links-item">Home</a>
+                <a href="/projects" class="header-links-item">Projects</a>
+                <a href="/contact" class="header-links-item">Contact</a>
+            </div>
+        </div>
         <div class="content">
             {% block content %}{% endblock %}
         </div>
     </body>
+
+    <script>
+		var myNav = document.getElementById('header');
+		window.onscroll = function () { 
+			var scroll_position = window.scrollY;
+			if(scroll_position != 0) {
+				myNav.classList.add("is-fixed");
+			}
+			else {
+				myNav.classList.remove("is-fixed");
+			}
+		};
+	</script>
 
     {% block javascript %}{% endblock %}
 </html>

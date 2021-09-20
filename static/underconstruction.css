@@ -1,0 +1,7 @@
+.under-construction{
+    width: 100vw;
+    box-sizing: border-box;
+    height: 100vh;
+    background-image: url('../static/background.png');
+    background-size: cover;
+}

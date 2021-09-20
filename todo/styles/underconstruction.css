@@ -1,0 +1,30 @@
+.under-construction{
+    width: 100vw;
+    box-sizing: border-box;
+    height: 100vh;
+    background-image: url('../static/background.png');
+    background-size: cover;
+}
+
+.under-construction-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.under-construction-content img{
+    width: 200px;
+}
+
+.under-construction-title{
+    font-family: 'Yellowtail', cursive;
+    font-size: 48px;
+    color: var(--red);
+}
+
+.under-construction-subtitle{
+    font-weight: bold;
+    color: white;
+}
